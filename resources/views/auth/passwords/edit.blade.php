@@ -5,14 +5,14 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                {{ trans('global.my_profile') }}
+                My Profile
             </div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route("profile.password.updateProfile") }}">
                     @csrf
                     <div class="form-group">
-                        <label class="required" for="name">{{ trans('cruds.user.fields.name') }}</label>
+                        <label class="required" for="name">Name</label>
                         <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', auth()->user()->name) }}" required>
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
@@ -21,7 +21,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="required" for="title">{{ trans('cruds.user.fields.email') }}</label>
+                        <label class="required" for="title">Email</label>
                         <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text" name="email" id="email" value="{{ old('email', auth()->user()->email) }}" required>
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-danger" type="submit">
-                            {{ trans('global.save') }}
+                            Save
                         </button>
                     </div>
                 </form>
@@ -41,14 +41,14 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                {{ trans('global.change_password') }}
+                Change Password
             </div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route("profile.password.update") }}">
                     @csrf
                     <div class="form-group">
-                        <label class="required" for="title">New {{ trans('cruds.user.fields.password') }}</label>
+                        <label class="required" for="title">New Password</label>
                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" required>
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
@@ -57,12 +57,12 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="required" for="title">Repeat New {{ trans('cruds.user.fields.password') }}</label>
+                        <label class="required" for="title">Repeat New Password</label>
                         <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" required>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-danger" type="submit">
-                            {{ trans('global.save') }}
+                            Save
                         </button>
                     </div>
                 </form>
@@ -74,7 +74,7 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                {{ trans('global.delete_account') }}
+                Delete Account
             </div>
 
             <div class="card-body">
@@ -82,7 +82,7 @@
                     @csrf
                     <div class="form-group">
                         <button class="btn btn-danger" type="submit">
-                            {{ trans('global.delete') }}
+                            Delete
                         </button>
                     </div>
                 </form>

@@ -12,8 +12,8 @@
                     @if(request()->has('team'))
                         <input type="hidden" name="team" id="team" value="{{ request()->query('team') }}">
                     @endif
-                    <h1>{{ trans('panel.site_title') }}</h1>
-                    <p class="text-muted">{{ trans('global.register') }}</p>
+                    <h1>Task Management</h1>
+                    <p class="text-muted">Register</p>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -21,7 +21,7 @@
                                 <i class="fa fa-user fa-fw"></i>
                             </span>
                         </div>
-                        <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.user_name') }}" value="{{ old('name', null) }}">
+                        <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="Name" value="{{ old('name', null) }}">
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -35,7 +35,7 @@
                                 <i class="fa fa-envelope fa-fw"></i>
                             </span>
                         </div>
-                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
+                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required placeholder="Email" value="{{ old('email', null) }}">
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -49,7 +49,7 @@
                                 <i class="fa fa-lock fa-fw"></i>
                             </span>
                         </div>
-                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="Password">
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
@@ -63,11 +63,11 @@
                                 <i class="fa fa-lock fa-fw"></i>
                             </span>
                         </div>
-                        <input type="password" name="password_confirmation" class="form-control" required placeholder="{{ trans('global.login_password_confirmation') }}">
+                        <input type="password" name="password_confirmation" class="form-control" required placeholder="Password Confirmation">
                     </div>
 
                     <button class="btn btn-block btn-primary">
-                        {{ trans('global.register') }}
+                        Register
                     </button>
                 </form>
 

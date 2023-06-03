@@ -1,6 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'Task Management',
-
+    'site_title' => 'Task Management'
 ];

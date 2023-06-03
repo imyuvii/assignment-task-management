@@ -3,21 +3,21 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.user.title') }}
+        Show User
     </div>
 
     <div class="card-body">
         <div class="form-group">
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.users.index') }}">
-                    {{ trans('global.back_to_list') }}
+                    Go Back
                 </a>
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.id') }}
+                            Id
                         </th>
                         <td>
                             {{ $user->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.name') }}
+                            Name
                         </th>
                         <td>
                             {{ $user->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email') }}
+                            Email
                         </th>
                         <td>
                             {{ $user->email }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email_verified_at') }}
+                            Email Verified At
                         </th>
                         <td>
                             {{ $user->email_verified_at }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.roles') }}
+                            Roles
                         </th>
                         <td>
                             @foreach($user->roles as $key => $roles)
@@ -61,7 +61,7 @@
             </table>
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.users.index') }}">
-                    {{ trans('global.back_to_list') }}
+                    Go Back
                 </a>
             </div>
         </div>

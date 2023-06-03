@@ -3,21 +3,21 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.task.title') }}
+        Show Task
     </div>
 
     <div class="card-body">
         <div class="form-group">
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.tasks.index') }}">
-                    {{ trans('global.back_to_list') }}
+                    Go Back
                 </a>
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.id') }}
+                            Id
                         </th>
                         <td>
                             {{ $task->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.name') }}
+                            Name
                         </th>
                         <td>
                             {{ $task->name }}
@@ -33,15 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.priority') }}
-                        </th>
-                        <td>
-                            {{ $task->priority }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.task.fields.user') }}
+                            Assigned To
                         </th>
                         <td>
                             {{ $task->user->name ?? '' }}
@@ -49,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.project') }}
+                            Project
                         </th>
                         <td>
                             {{ $task->project->name ?? '' }}
@@ -59,7 +51,7 @@
             </table>
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.tasks.index') }}">
-                    {{ trans('global.back_to_list') }}
+                    Go Back
                 </a>
             </div>
         </div>

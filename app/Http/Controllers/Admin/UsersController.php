@@ -30,7 +30,7 @@ class UsersController extends Controller
 
         $roles = Role::pluck('title', 'id');
 
-        $teams = Team::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $teams = Team::pluck('name', 'id')->prepend('Please Select', '');
 
         return view('admin.users.create', compact('roles', 'teams'));
     }
@@ -49,7 +49,7 @@ class UsersController extends Controller
 
         $roles = Role::pluck('title', 'id');
 
-        $teams = Team::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $teams = Team::pluck('name', 'id')->prepend('Please Select', '');
 
         $user->load('roles', 'team');
 

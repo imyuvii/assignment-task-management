@@ -2,7 +2,7 @@
 
     <div class="c-sidebar-brand d-md-down-none">
         <a class="c-sidebar-brand-full h4" href="#">
-            {{ trans('panel.site_title') }}
+            Task Management
         </a>
     </div>
 
@@ -45,21 +45,12 @@
                 </a>
             </li>
         @endcan
-        @if(\Illuminate\Support\Facades\Schema::hasColumn('teams', 'owner_id') && \App\Models\Team::where('owner_id', auth()->user()->id)->exists())
-            <li class="c-sidebar-nav-item">
-                <a class="{{ request()->is("admin/team-members") || request()->is("admin/team-members/*") ? "c-active" : "" }} c-sidebar-nav-link" href="{{ route("admin.team-members.index") }}">
-                    <i class="c-sidebar-nav-icon fa-fw fa fa-users">
-                    </i>
-                    <span>{{ trans("global.team-members") }}</span>
-                </a>
-            </li>
-        @endif
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
                 </i>
-                {{ trans('global.logout') }}
+                Logout
             </a>
         </li>
     </ul>

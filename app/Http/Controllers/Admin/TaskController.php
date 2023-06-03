@@ -30,9 +30,9 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::pluck('name', 'id')->prepend('Please Select', '');
 
-        $projects = Project::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $projects = Project::pluck('name', 'id')->prepend('Please Select', '');
 
         return view('admin.tasks.create', compact('projects', 'users'));
     }
@@ -49,9 +49,9 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::pluck('name', 'id')->prepend('Please Select', '');
 
-        $projects = Project::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $projects = Project::pluck('name', 'id')->prepend('Please Select', '');
 
         $task->load('user', 'project', 'team');
 
