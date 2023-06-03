@@ -20,16 +20,6 @@
                 <span class="help-block">{{ trans('cruds.task.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="priotity">{{ trans('cruds.task.fields.priotity') }}</label>
-                <input class="form-control {{ $errors->has('priotity') ? 'is-invalid' : '' }}" type="number" name="priotity" id="priotity" value="{{ old('priotity', '') }}" step="1">
-                @if($errors->has('priotity'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('priotity') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.task.fields.priotity_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="user_id">{{ trans('cruds.task.fields.user') }}</label>
                 <select class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id">
                     @foreach($users as $id => $entry)

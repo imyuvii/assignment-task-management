@@ -15,46 +15,6 @@ class PermissionsTableSeeder extends Seeder
                 'title' => 'user_management_access',
             ],
             [
-                'id'    => 2,
-                'title' => 'permission_create',
-            ],
-            [
-                'id'    => 3,
-                'title' => 'permission_edit',
-            ],
-            [
-                'id'    => 4,
-                'title' => 'permission_show',
-            ],
-            [
-                'id'    => 5,
-                'title' => 'permission_delete',
-            ],
-            [
-                'id'    => 6,
-                'title' => 'permission_access',
-            ],
-            [
-                'id'    => 7,
-                'title' => 'role_create',
-            ],
-            [
-                'id'    => 8,
-                'title' => 'role_edit',
-            ],
-            [
-                'id'    => 9,
-                'title' => 'role_show',
-            ],
-            [
-                'id'    => 10,
-                'title' => 'role_delete',
-            ],
-            [
-                'id'    => 11,
-                'title' => 'role_access',
-            ],
-            [
                 'id'    => 12,
                 'title' => 'user_create',
             ],
@@ -89,26 +49,6 @@ class PermissionsTableSeeder extends Seeder
             [
                 'id'    => 20,
                 'title' => 'project_access',
-            ],
-            [
-                'id'    => 21,
-                'title' => 'team_create',
-            ],
-            [
-                'id'    => 22,
-                'title' => 'team_edit',
-            ],
-            [
-                'id'    => 23,
-                'title' => 'team_show',
-            ],
-            [
-                'id'    => 24,
-                'title' => 'team_delete',
-            ],
-            [
-                'id'    => 25,
-                'title' => 'team_access',
             ],
             [
                 'id'    => 26,
