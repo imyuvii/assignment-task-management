@@ -19,7 +19,9 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $tasks = Task::with(['user', 'project', 'team'])->get();
+        $tasks = Task::with(['user', 'project', 'team'])
+            ->orderBy('priority', 'asc')
+            ->get();
 
         return view('admin.tasks.index', compact('tasks'));
     }
@@ -37,8 +39,9 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request)
     {
-        $task = Task::create($request->all());
-
+        $inputs = $request->all();
+        $inputs['priority'] = Task::max('priority') + 1;
+        Task::create($inputs);
         return redirect()->route('admin.tasks.index');
     }
 
@@ -90,4 +93,16 @@ class TaskController extends Controller
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
+    public function updateOrder(Request $request)
+    {
+        $tasks = Task::whereIn('id', $request->input('order'))
+            ->orderByRaw("FIELD(id, " . implode(",", $request->input('order')) . ")")
+            ->get();
+        foreach ($tasks as $task) {
+            $task->update(['priority' => array_search($task->id, $request->input('order'))]);
+        }
+        return response('Update Successfully.', Response::HTTP_OK);
+    }
+
 }

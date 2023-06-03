@@ -17,7 +17,10 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->company(3),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
         ];
     }
 }

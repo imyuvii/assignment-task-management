@@ -33,10 +33,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.priotity') }}
+                            {{ trans('cruds.task.fields.priority') }}
                         </th>
                         <td>
-                            {{ $task->priotity }}
+                            {{ $task->priority }}
                         </td>
                     </tr>
                     <tr>
